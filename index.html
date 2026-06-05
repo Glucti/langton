@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Langton's Ant</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #000;
+      overflow: hidden;
+      color: #ccc;
+      font-family: monospace;
+    }
+    canvas {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    #controls {
+      position: fixed;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      background: rgba(0,0,0,0.6);
+      padding: 10px 16px;
+      border: 1px solid #333;
+    }
+    label { display: flex; flex-direction: column; gap: 4px; font-size: 13px; }
+    select, input { background: #333; color: #ccc; border: 1px solid #555; padding: 4px 6px; }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <div id="controls">
+    <label>
+      rules
+      <input type="text" id="rules" value="LR" placeholder="e.g. LRRL">
+    </label>
+    <label>
+      speed
+      <input type="range" id="stepsPerFrame" value="500" min="1" max="10000">
+    </label>
+    <button id="pauseBtn">pause</button>
+    <button id="colorBtn">greyscale</button>
+    <button id="resetBtn">reset</button>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
